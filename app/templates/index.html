@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Overview · Infra Monitor{% endblock %}
+{% block body_class %}page-app{% endblock %}
+{% block body %}
+<header class="app-header">
+  <div class="brand brand-compact">
+    <div class="brand-mark" aria-hidden="true">IM</div>
+    <div class="brand-text">
+      <p class="brand-name">Infra Monitor</p>
+      <p class="brand-tag">Read-only demo</p>
+    </div>
+  </div>
+  <div class="app-header-actions">
+    <span class="user-chip">{{ username }}</span>
+    <form method="post" action="{{ url_for('main.logout') }}">
+      <button type="submit" class="btn-ghost">Sign out</button>
+    </form>
+  </div>
+</header>
+
+<main class="app-main">
+  <div class="page-intro">
+    <h1>Fleet overview</h1>
+    <p>CPU, memory, network, and ports — view only. No SSH required.</p>
+  </div>
+
+  <div class="metric-grid">
+    <section class="metric-panel">
+      <h2>CPU</h2>
+      <p class="metric-value">{{ metrics.cpu }}</p>
+    </section>
+    <section class="metric-panel">
+      <h2>Memory</h2>
+      <p class="metric-value">{{ metrics.memory }}</p>
+    </section>
+    <section class="metric-panel">
+      <h2>Network</h2>
+      <p class="metric-value">{{ metrics.network }}</p>
+    </section>
+    <section class="metric-panel">
+      <h2>Ports</h2>
+      <p class="metric-value">{{ metrics.ports }}</p>
+    </section>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Sign in · Infra Monitor{% endblock %}
+{% block body_class %}page-login{% endblock %}
+{% block body %}
+<main class="login-stage">
+  <div class="login-glow" aria-hidden="true"></div>
+
+  <section class="login-card" aria-labelledby="signin-heading">
+    <header class="brand">
+      <div class="brand-mark" aria-hidden="true">IM</div>
+      <div class="brand-text">
+        <h1 class="brand-name">Infra Monitor</h1>
+        <p class="brand-tag">Linux demo · read-only monitoring</p>
+      </div>
+    </header>
+
+    <div class="login-body">
+      <h2 id="signin-heading" class="login-title">Sign in</h2>
+      <p class="login-help">Use the local admin account. Credentials are not stored in source.</p>
+
+      {% if error %}
+      <p class="login-error" role="alert">{{ error }}</p>
+      {% endif %}
+
+      <form method="post" action="{{ url_for('main.login') }}" class="login-form" autocomplete="on">
+        <label class="field">
+          <span class="field-label">Username</span>
+          <input
+            type="text"
+            name="username"
+            value="{{ username_value }}"
+            required
+            autofocus
+            autocomplete="username"
+          >
+        </label>
+
+        <label class="field">
+          <span class="field-label">Password</span>
+          <input
+            type="password"
+            name="password"
+            required
+            autocomplete="current-password"
+            placeholder=""
+          >
+        </label>
+
+        <button type="submit" class="btn-primary">Sign in</button>
+      </form>
+    </div>
+
+    <footer class="login-footer">Bound to 127.0.0.1 · session protected</footer>
+  </section>
+</main>
+{% endblock %}
