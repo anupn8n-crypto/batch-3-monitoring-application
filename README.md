@@ -2,6 +2,9 @@
 
 Local Flask demo so internal L1/L2/L3 teams can view Linux host signals (CPU, memory, network, ports) without SSH. **Local demo only — not for production.**
 
+GitHub: https://github.com/anupn8n-crypto/batch-3-monitoring-application  
+Development branch: `dev` (open PRs into `main`).
+
 ## Setup
 
 ```bash
