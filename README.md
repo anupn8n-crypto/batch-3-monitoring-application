@@ -21,7 +21,7 @@ Never commit `.venv` or `.env`.
 ```bash
 source .venv/bin/activate
 pip install -r requirements-dev.txt
-pytest tests/test_auth_utils.py
+pytest tests/test_auth_utils.py tests/test_auth_routes.py
 ```
 
 ## Run

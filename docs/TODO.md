@@ -105,11 +105,11 @@ Feature focus: friendly **read-only UI**, **admin sign-in** (hashed password), *
 - [x] **Done when:** hitting `/` logged out redirects to login
 
 ### Step 1.7 — Unit tests for auth routes
-- [ ] `tests/test_auth_routes.py`: login success, login failure, logout, protected redirect
-- [ ] Use Flask test client; no real browser required
-- [ ] **Security:** failure test ensures no stack trace/password in response body
-- [ ] **Docs:** mention auth tests in README
-- [ ] **Done when:** `pytest` passes for auth utils + auth routes
+- [x] `tests/test_auth_routes.py`: login success, login failure, logout, protected redirect
+- [x] Use Flask test client; no real browser required
+- [x] **Security:** failure test ensures no stack trace/password in response body
+- [x] **Docs:** mention auth tests in README
+- [x] **Done when:** `pytest` passes for auth utils + auth routes
 
 ---
 
@@ -271,3 +271,4 @@ Feature focus: friendly **read-only UI**, **admin sign-in** (hashed password), *
 | 2026-11-24 | 0.1–0.3 | Skeleton, venv, Flask boots; `/` returns `200 Monitoring Demo` |
 | 2026-11-24 | 0.4–0.5 + login UI | Infra Monitor dark login (admin/hash), overview shell; http://127.0.0.1:5001/login |
 | 2026-11-24 | 1.2 | `tests/test_auth_utils.py` + `requirements-dev.txt`; pytest green |
+| 2026-11-25 | 1.7 | `tests/test_auth_routes.py` login/logout/protect; pytest green |
